@@ -11,23 +11,23 @@ public class MyJavaEmployee {
     private static final double EXTRA_TIME_WAGES = 1.5 * HOURLY_RATE; //(HOURLY_RATE + (HOURLY_RATE / 2)
 
 // This is with Method to best practice
-    public static double totalWages( int numberHRS, double totalSales) {
-        double wages;
-        int extraHRS = numberHRS - REGULAR_HRS;
-        if (numberHRS <= REGULAR_HRS) {
-            wages = HOURLY_RATE * REGULAR_HRS;
-        } else {
-            wages = (HOURLY_RATE * REGULAR_HRS) + (extraHRS * EXTRA_TIME_WAGES);
-        }
-        if (totalSales >= 1 && totalSales <= 99.99) {
-            wages = wages + (totalSales * COMMISSION_PERCENTAGE1);
-        } else if (totalSales >= 100 && totalSales <= 299.99) {
-            wages = wages + (totalSales * COMMISSION_PERCENTAGE2);
-        } else {
-            wages = wages + (totalSales * COMMISSION_PERCENTAGE3);
-        }
-        return wages;
-    }
+//    public static double totalWages( int numberHRS, double totalSales) {
+//        double wages;
+//        int extraHRS = numberHRS - REGULAR_HRS;
+//        if (numberHRS <= REGULAR_HRS) {
+//            wages = HOURLY_RATE * REGULAR_HRS;
+//        } else {
+//            wages = (HOURLY_RATE * REGULAR_HRS) + (extraHRS * EXTRA_TIME_WAGES);
+//        }
+//        if (totalSales >= 1 && totalSales <= 99.99) {
+//            wages = wages + (totalSales * COMMISSION_PERCENTAGE1);
+//        } else if (totalSales >= 100 && totalSales <= 299.99) {
+//            wages = wages + (totalSales * COMMISSION_PERCENTAGE2);
+//        } else {
+//            wages = wages + (totalSales * COMMISSION_PERCENTAGE3);
+//        }
+//        return wages;
+//    }
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
         System.out.println("Please enter number HRS  you worked");
@@ -54,7 +54,7 @@ public class MyJavaEmployee {
         } else {
             wages = wages + (totalSales * COMMISSION_PERCENTAGE3);
         }
-        System.out.println("Your total sales is: $"+totalSales+"\nThe total hours you worked is: "+numberHRS+"\nYour total wages is: $" + wages);
+        System.out.println("Your total sales is: $"+totalSales+"\nThe total hours you worked is: "+numberHRS+" hrs"+"\nYour total wages is: $" + wages);
 
     }
 
