@@ -1,6 +1,5 @@
-package Lab8;
+package Lab8_9;
 
-import javax.swing.*;
 import java.util.Scanner;
 
 public class DNAStrand {
