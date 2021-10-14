@@ -18,11 +18,13 @@ public class CountTemperature_365 {
         }
         averageOfMonth(temp);
         System.out.println();
-        coldestTemperature(temp);
+        coldestTemperatureEachMonth(temp);
         System.out.println();
-        hottestTemperature(temp);
+        hottestTemperatureEachMonth(temp);
         System.out.println();
         temperatureDifference(temp);
+        System.out.println();
+        coldestHottestTemperatureForYear(temp);
 
 
     }
@@ -42,7 +44,7 @@ public class CountTemperature_365 {
         }
     }
 
-    public static void hottestTemperature(double[][] temperature) {
+    public static void hottestTemperatureEachMonth(double[][] temperature) {
         int x = temperature.length;
         int z = temperature[0].length;
         double out[] = new double[x];
@@ -62,7 +64,7 @@ public class CountTemperature_365 {
         }
     }
 
-    public static void coldestTemperature(double[][] temperature) {
+    public static void coldestTemperatureEachMonth(double[][] temperature) {
         int x = temperature.length;
         int z = temperature[0].length;
         double res[] = new double[x];
@@ -97,4 +99,21 @@ public class CountTemperature_365 {
 
         }
     }
-}
+    public static void coldestHottestTemperatureForYear(double [][] temperature){
+
+        double lowest = temperature[0][0], highest = temperature[0][0];
+        for (double[] row : temperature) {
+            for (double i : row) {
+                if (i < lowest) {
+                    lowest = i;
+                }
+                if (i > highest) {
+                    highest = i;
+                }
+            }
+            }
+        System.out.println("The Highest temperature for the year is: "+ highest +" degrees");
+        System.out.println("The Coldest temperature for the year is: " + lowest+" degrees");
+        }
+    }
+
