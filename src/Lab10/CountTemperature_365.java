@@ -1,5 +1,6 @@
 package Lab10;
 
+import java.text.DecimalFormat;
 import java.util.Random;
 
 public class CountTemperature_365 {
@@ -16,8 +17,12 @@ public class CountTemperature_365 {
             System.out.println();
         }
         averageOfMonth(temp);
+        System.out.println();
         coldestTemperature(temp);
+        System.out.println();
         hottestTemperature(temp);
+        System.out.println();
+        temperatureDifference(temp);
 
 
     }
@@ -25,6 +30,7 @@ public class CountTemperature_365 {
     public static void averageOfMonth(double arr[][]) {
         String[] monthName = {"January", "February", "March", "April", "May", "June", "July", "August", "September",
                 "October", "November", "December"};
+        DecimalFormat df = new DecimalFormat("0.00");
         double hottest = arr[1][1];
         double coldest = arr[1][1];
         for (int r = 1; r <= arr.length; r++) {
@@ -32,7 +38,7 @@ public class CountTemperature_365 {
             for (int c = 1; c <= arr[r - 1].length; c++) {
                 sum += arr[r - 1][c - 1];
             }
-            System.out.println("The Average temperature for " + monthName[r - 1] + " is: " + sum / arr[r - 1].length + " degrees");
+            System.out.println("The Average temperature for " + monthName[r - 1] + " is: " +df.format(sum / arr[r - 1].length)  + " degrees");
         }
     }
 
@@ -45,8 +51,6 @@ public class CountTemperature_365 {
             for (int c = 0; c < z; c++) {
                 if (temperature[r][c] > hottest)
                     hottest = temperature[r][c];
-//                else if (temperature[r][c ] < coldest)
-//                    coldest = temperature[r ][c ];
             }
             out[r] = hottest;
         }
@@ -73,8 +77,23 @@ public class CountTemperature_365 {
         String[] monthName = {"January", "February", "March", "April", "May", "June", "July", "August", "September",
                 "October", "November", "December"};
         for (int i = 0; i < x; i++) {
-            //System.out.println(out[i]);
             System.out.println("The coldest temperature of for " + monthName[i] + " is: " + res[i] + " degrees");
+
+        }
+    }
+    public static void temperatureDifference(double [][] temperature) {
+        for (double[] row : temperature) {
+            double lowest = row[0], highest = row[0];
+            for (double i : row) {
+                if (i < lowest) {
+                    lowest = i;
+                }
+                if (i > highest) {
+                    highest = i;
+                }
+            }
+            System.out.println("The difference b/n the Highest: "+ highest +" and coldest:" + lowest+" of the month is: "
+                    + (highest-lowest) + " degrees");
 
         }
     }
