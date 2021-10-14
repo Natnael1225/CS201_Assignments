@@ -17,11 +17,11 @@ public class StandardDeviation {
         }
         System.out.print("[ ");
         for (int i = 0; i < arr.length; i++) {
-            System.out.print(arr[i] + "\t");
-            sum=+arr[i];
+            System.out.print(arr[i] + " \t ");
+            sum+=arr[i];
         }
-        System.out.print("]");
-        double x = sum/ arr.length;
+       System.out.print("]");
+        double x = sum/arr.length;
         System.out.println("\nThe average for the value of X is: "+ x);
         for (int i = 0; i < arr.length ; i++) {
             insideCal+=Math.pow(arr[i]-x,2);
