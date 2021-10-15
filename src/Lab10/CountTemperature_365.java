@@ -16,6 +16,7 @@ public class CountTemperature_365 {
             }
             System.out.println();
         }
+        System.out.println();
         averageOfMonth(temp);
         System.out.println();
         coldestTemperatureEachMonth(temp);
@@ -40,7 +41,7 @@ public class CountTemperature_365 {
             for (int c = 1; c <= arr[r - 1].length; c++) {
                 sum += arr[r - 1][c - 1];
             }
-            System.out.println("The Average temperature for " + monthName[r - 1] + " is: " +df.format(sum / arr[r - 1].length)  + " degrees");
+            System.out.println("The Average temperature for " + monthName[r - 1] + " is: " + df.format(sum / arr[r - 1].length) + " degrees");
         }
     }
 
@@ -83,7 +84,8 @@ public class CountTemperature_365 {
 
         }
     }
-    public static void temperatureDifference(double [][] temperature) {
+
+    public static void temperatureDifference(double[][] temperature) {
         for (double[] row : temperature) {
             double lowest = row[0], highest = row[0];
             for (double i : row) {
@@ -94,12 +96,13 @@ public class CountTemperature_365 {
                     highest = i;
                 }
             }
-            System.out.println("The difference b/n the Highest: "+ highest +" and coldest:" + lowest+" of the month is: "
-                    + (highest-lowest) + " degrees");
+            System.out.println("The difference b/n the Highest: " + highest + " and coldest:" + lowest + " of the month is: "
+                    + (highest - lowest) + " degrees");
 
         }
     }
-    public static void coldestHottestTemperatureForYear(double [][] temperature){
+
+    public static void coldestHottestTemperatureForYear(double[][] temperature) {
 
         double lowest = temperature[0][0], highest = temperature[0][0];
         for (double[] row : temperature) {
@@ -111,9 +114,10 @@ public class CountTemperature_365 {
                     highest = i;
                 }
             }
-            }
-        System.out.println("The Highest temperature for the year is: "+ highest +" degrees");
-        System.out.println("The Coldest temperature for the year is: " + lowest+" degrees");
         }
+        System.out.println("The Highest temperature for the year is: " + highest + " degrees");
+        System.out.println("The Coldest temperature for the year is: " + lowest + " degrees");
     }
+}
+
 
