@@ -27,15 +27,12 @@ public class CountTemperature_365 {
         System.out.println();
         coldestHottestTemperatureForYear(temp);
 
-
     }
 
     public static void averageOfMonth(double arr[][]) {
         String[] monthName = {"January", "February", "March", "April", "May", "June", "July", "August", "September",
                 "October", "November", "December"};
         DecimalFormat df = new DecimalFormat("0.00");
-        double hottest = arr[1][1];
-        double coldest = arr[1][1];
         for (int r = 1; r <= arr.length; r++) {
             double sum = 0;
             for (int c = 1; c <= arr[r - 1].length; c++) {
